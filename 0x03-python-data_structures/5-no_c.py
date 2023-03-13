@@ -7,7 +7,7 @@ def no_c(my_string):
     '''
     my_list = []
     for i in my_string:
-        if i.lower() != 'c':
+        if i not in ('C', 'c'):
             my_list.append(i)
     new_string = my_list[0]
     for i in range(1, len(my_list)):
