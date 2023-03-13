@@ -5,7 +5,6 @@ def print_reversed_list_integer(my_list=[]):
     '''
     prints all integers of a list, in reverse order
     '''
-    i = len(my_list) - 1
-    while i >= 0:
-        print('{:d}'.format(my_list[i]))
-        i -= 1
+    new_list = sorted(my_list, reverse=True)
+    for i in new_list:
+        print('{:d}'.format(i))
