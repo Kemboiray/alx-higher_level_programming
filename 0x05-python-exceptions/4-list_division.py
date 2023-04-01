@@ -1,24 +1,21 @@
 #!/usr/bin/python3
 
 def list_division(my_list_1, my_list_2, list_length):
-    """
-    Divides two lists element-wise
-
-    Return: new list of dividends
-    """
-    new_list = list()
+    new_list = []
     for i in range(list_length):
         try:
-            d = my_list_1[i] / my_list_2[i]
+            elem_1 = my_list_1[i]
+            elem_2 = my_list_2[i]
+            elem_new = elem_1 / elem_2
         except ZeroDivisionError:
-            print("division by 0")
-            new_list.append(0)
+            elem_new = 0
+            print('division by 0')
         except TypeError:
-            print("wrong type")
-            new_list.append(0)
+            elem_new = 0
+            print('wrong type')
         except IndexError:
-            print("out of range")
-            break
-        else:
-            new_list.append(d)
+            elem_new = 0
+            print('out of range')
+        finally:
+            new_list.append(elem_new)
     return new_list
