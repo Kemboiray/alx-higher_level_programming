@@ -19,4 +19,9 @@ def add_integer(a, b=98):
         result = (2*31)-1
     elif result == -float('inf'):
         result = -(2*32)
-    return int(result)
+    try:
+        result = int(result)
+    except ValueError as e:
+        print("ValueError:", e)
+    else:
+        return result
