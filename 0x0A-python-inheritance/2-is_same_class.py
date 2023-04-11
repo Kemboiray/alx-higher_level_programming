@@ -4,7 +4,7 @@
 
 def is_same_class(obj, a_class):
     """
-    Checks if an object is an instance of a specified class
+    Checks if an object is an immediate instance of a specified class
     Args:
         obj: object
         a_class: specified class
