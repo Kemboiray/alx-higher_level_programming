@@ -1,0 +1,29 @@
+Doctest for ('2-matrix_divided').matrix_divided
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+    >>> mat1 = [[1, 2, 3], [4, 5, 6]]
+    >>> mat2 = 'string'
+    >>> mat3 = [[1, 2, 3], [4, 5, 6, 7]]
+    >>> mat4 = [[1, 'str', 2], [3, 4, 5]]
+    >>> mat5 = [[1, 2, 3], 'str']
+    >>> matrix_divided(mat1, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+    >>> mat1
+    [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(mat2, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+    >>> matrix_divided(mat3, 3)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+    >>> matrix_divided(mat4, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+    >>> matrix_divided(mat5, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+    >>> matrix_divided(mat1, 'str')
+    Traceback (most recent call last):
+    TypeError: div must be a number
+    >>> matrix_divided(mat1, 0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
