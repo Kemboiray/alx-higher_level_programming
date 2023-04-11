@@ -10,9 +10,13 @@ def add_integer(a, b=98):
     Returns:
         Integer result of the addition
     """
-    if not isinstance(a, int) and not isinstance(a, float):
+    if a is None or (not (isinstance(a, int) or isinstance(a, float))):
         raise TypeError('a must be an integer')
-    if not isinstance(b, int) and not isinstance(b, float):
+    if not (isinstance(b, int) or isinstance(b, float)):
         raise TypeError('b must be an integer')
-    result = int(a) + int(b)
-    return result
+    result = a + b
+    if result == float('inf'):
+        result = (2*31)-1
+    elif result == -float('inf'):
+        result = -(2*32)
+    return int(result)
