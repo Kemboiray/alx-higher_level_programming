@@ -1,16 +1,16 @@
 Doctest for `1-my_list.MyList` class
 
-	>>> MyList = __import__('1-my_list').MyList
-	>>> issubclass(MyList, list)
-	True
-	>>> list_1 = MyList()
-	>>> list_1.append(2)
-	>>> list_1.append(5)
-	>>> list_1.append(8)
-	>>> list_1.append(2)
-	>>> list_1
-	[2, 5, 8, 2]
-	>>> list_1.print_sorted()
-	[2, 2, 5, 8]
-	>>> list_1
-	[2, 5, 8, 2]
+    >>> MyList = __import__('1-my_list').MyList
+    >>> issubclass(MyList, list)
+    True
+    >>> list_1 = MyList()
+    >>> list_1.append(2)
+    >>> list_1.append(5)
+    >>> list_1.append(8)
+    >>> list_1.append(2)
+    >>> list_1
+    [2, 5, 8, 2]
+    >>> list_1.print_sorted()
+    [2, 2, 5, 8]
+    >>> list_1
+    [2, 5, 8, 2]
