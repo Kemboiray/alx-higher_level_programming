@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Defines class ``Rectangle``"""
+"""Defines direct subclass of ``Base``, ``Rectangle``"""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Defines a ``Rectangle`` object``"""
+    """Defines a ``Rectangle`` object"""
 
     def __init__(self, width: int, height: int, x: int = 0, y: int = 0,
                  id: int = None):
@@ -12,7 +12,8 @@ class Rectangle(Base):
         Args:
             width: initial value of ``__width``
             height: initial value of ``__height``
-            x, y: coordinates
+            x, y: positional coordinates
+            id: object counter
         """
         super().__init__(id)
         if not (type(width) is int):
