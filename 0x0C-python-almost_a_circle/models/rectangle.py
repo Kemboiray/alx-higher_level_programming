@@ -6,7 +6,8 @@ from models.base import Base
 class Rectangle(Base):
     """Defines a ``Rectangle`` object``"""
 
-    def __init__(self, width: int, height: int, x=0, y=0, id=None):
+    def __init__(self, width: int, height: int, x: int = 0, y: int = 0,
+                 id: int = None):
         """Class constructor
         Args:
             width: initial value of ``__width``
@@ -45,7 +46,7 @@ class Rectangle(Base):
         return self.__width
 
     @width.setter
-    def width(self, value):
+    def width(self, value: int):
         """Sets the ``width`` attribute"""
         if not (type(value) is int):
             raise TypeError('width must be an integer')
@@ -60,7 +61,7 @@ class Rectangle(Base):
         return self.__height
 
     @height.setter
-    def height(self, value):
+    def height(self, value: int):
         """Sets the ``height`` attribute"""
         if not (type(value) is int):
             raise TypeError('height must be an integer')
@@ -75,7 +76,7 @@ class Rectangle(Base):
         return self.__x
 
     @x.setter
-    def x(self, value):
+    def x(self, value: int):
         """Sets the ``x`` attribute"""
         if not (type(value) is int):
             raise TypeError('x must be an integer')
@@ -90,7 +91,7 @@ class Rectangle(Base):
         return self.__y
 
     @y.setter
-    def y(self, value):
+    def y(self, value: int):
         """Sets the ``y`` attribute"""
         if not (type(value) is int):
             raise TypeError('y must be an integer')
@@ -105,10 +106,10 @@ class Rectangle(Base):
 
     def display(self):
         """Displays ``Rectangle`` instance using #"""
+        print('\n'*self.__y, end='')
         for h in range(self.__height):
-            for w in range(self.__width):
-                print("#", end="")
-            print()
+            print(' '*self.__x, end='')
+            print('#'*self.__width)
 
     def __str__(self):
         ret = f"""[Rectangle] ({self.id}) {self.__x}/{self.__y}\
