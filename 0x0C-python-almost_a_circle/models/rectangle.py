@@ -116,19 +116,13 @@ class Rectangle(Base):
  - {self.__width}/{self.__height}"""
         return ret
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Updates class instance attributes"""
-        i = 1
+        attributes = ['id', 'width', 'height', 'x', 'y']
         if len(args):
-            self.id = args[0]
-        if i < len(args):
-            self.width = args[i]
-            i += 1
-        if i < len(args):
-            self.height = args[i]
-            i += 1
-        if i < len(args):
-            self.x = args[i]
-            i += 1
-        if i < len(args):
-            self.y = args[i]
+            for attr, arg in zip(attributes, args):
+                setattr(self, attr, arg)
+        else:
+            for k, v in kwargs.items():
+                if hasattr(self, k):
+                    setattr(self, k, v)
