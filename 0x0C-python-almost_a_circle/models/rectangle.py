@@ -14,24 +14,28 @@ class Rectangle(Base):
             x, y: coordinates
         """
         super().__init__(id)
-        if not (type(width) is int or type(width) is float):
-            raise TypeError('width must be a real number')
-        elif width < 0:
-            raise ValueError('width must be positive')
+        if not (type(width) is int):
+            raise TypeError('width must be an integer')
+        elif width <= 0:
+            raise ValueError('width must be > 0')
         else:
             self.__width = width
-        if not (type(height) is int or type(height) is float):
-            raise TypeError('height must be a real number')
-        elif height < 0:
-            raise ValueError('height must be positive')
+        if not (type(height) is int):
+            raise TypeError('height must be an integer')
+        elif height <= 0:
+            raise ValueError('height must be > 0')
         else:
             self.__height = height
-        if not (type(x) is int or type(x) is float):
-            raise TypeError('x must be a real number')
+        if not (type(x) is int):
+            raise TypeError('x must be an integer')
+        elif x < 0:
+            raise ValueError('x must be >= 0')
         else:
             self.__x = x
-        if not (type(y) is int or type(y) is float):
-            raise TypeError('y must be a real number')
+        if not (type(y) is int):
+            raise TypeError('y must be an integer')
+        elif y < 0:
+            raise ValueError('y must be >= 0')
         else:
             self.__y = y
 
@@ -42,11 +46,11 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        """Sets the ``value`` attribute"""
-        if not (type(value) is int or type(value) is float):
-            raise TypeError('value must be a real number')
-        elif value < 0:
-            raise ValueError('value must be positive')
+        """Sets the ``width`` attribute"""
+        if not (type(value) is int):
+            raise TypeError('width must be an integer')
+        elif value <= 0:
+            raise ValueError('width must be > 0')
         else:
             self.__width = value
 
@@ -57,11 +61,11 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        """Sets the ``value`` attribute"""
-        if not (type(value) is int or type(value) is float):
-            raise TypeError('value must be a real number')
-        elif value < 0:
-            raise ValueError('value must be positive')
+        """Sets the ``height`` attribute"""
+        if not (type(value) is int):
+            raise TypeError('height must be an integer')
+        elif value <= 0:
+            raise ValueError('height must be > 0')
         else:
             self.__height = value
 
@@ -73,10 +77,12 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Sets the ``x`` attribute"""
-        if not (type(x) is int or type(x) is float):
-            raise TypeError('x must be a real number')
+        if not (type(value) is int):
+            raise TypeError('x must be an integer')
+        elif value < 0:
+            raise ValueError('x must be >= 0')
         else:
-            self.__x = x
+            self.__x = value
 
     @property
     def y(self):
@@ -86,7 +92,9 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Sets the ``y`` attribute"""
-        if not (type(y) is int or type(y) is float):
-            raise TypeError('y must be a real number')
+        if not (type(value) is int):
+            raise TypeError('y must be an integer')
+        elif value < 0:
+            raise ValueError('y must be >= 0')
         else:
-            self.__y = y
+            self.__y = value
