@@ -119,15 +119,16 @@ class Rectangle(Base):
     def update(self, *args):
         """Updates class instance attributes"""
         i = 1
-        self.id = args[0]
+        if len(args):
+            self.id = args[0]
         if i < len(args):
-            self.__width = args[i]
+            self.width = args[i]
             i += 1
         if i < len(args):
-            self.__height = args[i]
+            self.height = args[i]
             i += 1
         if i < len(args):
-            self.__x = args[i]
+            self.x = args[i]
             i += 1
         if i < len(args):
-            self.__y = args[i]
+            self.y = args[i]
