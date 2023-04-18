@@ -115,3 +115,19 @@ class Rectangle(Base):
         ret = f"""[Rectangle] ({self.id}) {self.__x}/{self.__y}\
  - {self.__width}/{self.__height}"""
         return ret
+
+    def update(self, *args):
+        """Updates class instance attributes"""
+        i = 1
+        self.id = args[0]
+        if i < len(args):
+            self.__width = args[i]
+            i += 1
+        if i < len(args):
+            self.__height = args[i]
+            i += 1
+        if i < len(args):
+            self.__x = args[i]
+            i += 1
+        if i < len(args):
+            self.__y = args[i]
