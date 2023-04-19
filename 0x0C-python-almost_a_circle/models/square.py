@@ -10,23 +10,23 @@ class Square(Rectangle):
         Args:
             size: side length of square
             x, y: positional coordinates
-            id: onject counter
+            id: object counter
         """
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        """getter method for ``size`` """
+        """Getter method for ``size`` """
         return self.width
 
     @size.setter
     def size(self, value):
-        """setter method for ``size`` """
+        """Setter method for ``size`` """
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
-        """Update class instance attributes"""
+        """Update class instance attributes """
         if len(args):
             attributes = ['id', 'size', 'x', 'y']
             for attr, arg in zip(attributes, args):
