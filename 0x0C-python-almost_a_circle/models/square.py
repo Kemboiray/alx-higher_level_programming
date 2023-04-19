@@ -36,6 +36,11 @@ class Square(Rectangle):
                 if hasattr(self, k):
                     setattr(self, k, v)
 
+    def to_dictionary(self):
+        """Return dictionary description of self """
+        attributes = ['id', 'size', 'x', 'y']
+        return {attr: getattr(self, attr) for attr in attributes}
+
     def __str__(self):
         return f"[Square] ({self.id}) {self.x}/{self.y}\
  - {self.width}"
