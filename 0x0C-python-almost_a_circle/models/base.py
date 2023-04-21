@@ -18,6 +18,24 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @classmethod
+    def save_to_file(cls, list_objs: list):
+        """Write the JSON string representation of ``list_objs`` to a file
+        Arg:
+            list_objs: List of instances inheriting from ``Base``
+        """
+        filename = f'{cls.__name__}.json'
+        dict_list = None
+        if isinstance(list_objs, list) and len(list_objs):
+            for item in list_objs:
+                if not (isinstance(item, Base)):
+                    e = f'Expected a `Base` instance, got {type(item)}'
+                    raise TypeError(e)
+            dict_list = [cls.to_dictionary(obj) for obj in list_objs]
+        to_write = cls.to_json_string(dict_list)
+        with open(filename, 'w', encoding='utf-8') as f:
+            f.write(to_write)
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """Return json string representation of a list of dictionaries
