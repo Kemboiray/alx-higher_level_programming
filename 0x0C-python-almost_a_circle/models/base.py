@@ -50,8 +50,11 @@ class Base:
     def load_from_file(cls):
         """Return a list of instances """
         filename = f'{cls.__name__}.json'
-        with open(filename, 'r', encoding='utf-8') as f:
-            to_load = f.read()
+        try:
+            with open(filename, 'r', encoding='utf-8') as f:
+                to_load = f.read()
+        except FileNotFoundError:
+            return []
         dict_list = cls.from_json_string(to_load)
         inst_list = []
         for dictionary in dict_list:
