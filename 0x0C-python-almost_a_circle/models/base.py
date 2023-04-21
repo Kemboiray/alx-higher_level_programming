@@ -25,14 +25,14 @@ class Base:
             list_objs: List of instances inheriting from ``Base``
         """
         filename = f'{cls.__name__}.json'
-        dict_list = None
+        to_save = None
         if isinstance(list_objs, list) and len(list_objs):
             for item in list_objs:
                 if not (isinstance(item, Base)):
                     e = f'Expected a `Base` instance, got {type(item)}'
                     raise TypeError(e)
-            dict_list = [cls.to_dictionary(obj) for obj in list_objs]
-        to_write = cls.to_json_string(dict_list)
+            to_save = [cls.to_dictionary(obj) for obj in list_objs]
+        to_write = cls.to_json_string(to_save)
         with open(filename, 'w', encoding='utf-8') as f:
             f.write(to_write)
 
@@ -45,6 +45,18 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Return a list of instances """
+        filename = f'{cls.__name__}.json'
+        with open(filename, 'r', encoding='utf-8') as f:
+            to_load = f.read()
+        dict_list = cls.from_json_string(to_load)
+        inst_list = []
+        for dictionary in dict_list:
+            inst_list.append(cls.create(**dictionary))
+        return inst_list
 
     @staticmethod
     def to_json_string(list_dictionaries):
