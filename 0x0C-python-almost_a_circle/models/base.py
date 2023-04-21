@@ -45,7 +45,7 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
-    
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """Return json string representation of a list of dictionaries
