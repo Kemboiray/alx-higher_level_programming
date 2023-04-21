@@ -52,3 +52,14 @@ got {type(list_dictionaries)}')
             if not isinstance(item, dict):
                 raise TypeError(f'Expected a dict, got {type(item)}')
         return json.dumps(list_dictionaries)
+
+    @staticmethod
+    def from_json_string(json_string: str):
+        """Return the list of the JSON string representation ``json_string``
+        """
+        if json_string is None or (isinstance(json_string, str)
+                                   and len(json_string) == 0):
+            return []
+        if not isinstance(json_string, str):
+            raise TypeError(f'Expected a `str`, got {type(json_string)}')
+        return json.loads(json_string)
