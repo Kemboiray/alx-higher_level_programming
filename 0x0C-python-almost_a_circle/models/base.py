@@ -36,6 +36,16 @@ class Base:
         with open(filename, 'w', encoding='utf-8') as f:
             f.write(to_write)
 
+    @classmethod
+    def create(cls, **dictionary):
+        """Return a subclass instance with attributes already set """
+        if cls.__name__ == 'Rectangle':
+            dummy = cls(1, 1)
+        elif cls.__name__ == 'Square':
+            dummy = cls(1)
+        dummy.update(dictionary)
+        return dummy
+    
     @staticmethod
     def to_json_string(list_dictionaries):
         """Return json string representation of a list of dictionaries
