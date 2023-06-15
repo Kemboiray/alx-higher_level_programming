@@ -1,14 +1,19 @@
 #!/usr/bin/node
 
-if (process.argv.length < 4) { console.log(0); } else {
+if (process.argv.length < 4) {
+  console.log(0);
+} else {
   const array = process.argv.slice(2);
-  array.forEach(parseInt);
+  const len = array.length;
+  for (let i = 0; i < len; i++) {
+    array[i] = parseInt(array[i], 10);
+  }
   for (let i = 0; i < 2; i++) {
-    for (let j = i + 1; j < array.length; j++) {
+    for (let j = i + 1; j < len; j++) {
       if (array[j] > array[i]) {
-        const tmp = array[j];
+        const temp = array[j];
         array[j] = array[i];
-        array[i] = tmp;
+        array[i] = temp;
       }
     }
   }
