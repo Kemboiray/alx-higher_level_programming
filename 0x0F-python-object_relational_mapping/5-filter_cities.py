@@ -16,11 +16,11 @@ if __name__ == '__main__':
                        WHERE name LIKE BINARY %s
                        ORDER BY id ASC)""", (argv[4],))
     query_rows = cur.fetchall()
-    try:
+    if query_rows:
         for row in query_rows[:-1]:
             print(row[0], end=', ')
         print(query_rows[-1][0])
-    except IndexError:
-        pass
+    else:
+        print()
     cur.close()
     conn.close()
