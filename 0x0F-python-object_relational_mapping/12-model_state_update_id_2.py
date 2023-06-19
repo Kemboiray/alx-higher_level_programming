@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
-Lists the first ``State`` objects from a database
+Lists all ``State`` objects from a database
 
 Usage:
-    $ ./10-model_state_my_get.py <user_name> <password> <database_name>
+    $ ./12-model_state_update_id_2.py <user_name> <password> <database_name>
 
 """
 
@@ -20,10 +20,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-
-    state = session.query(State).filter_by(name=sys.argv[4]).first()
-    if state:
-        print(f'{state.id}')
-    else:
-        print('Not found')
+    state = session.query(State).filter_by(id=2).first()
+    state.name = 'New Mexico'
+    session.commit()
     session.close()
