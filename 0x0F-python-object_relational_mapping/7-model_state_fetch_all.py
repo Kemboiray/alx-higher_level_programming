@@ -1,5 +1,10 @@
 #!/usr/bin/python3
-"""Start link class to table in database
+"""
+Lists all ``State`` objects from a database
+
+Usage:
+    $ ./7-model_state_fetch_all.py <user_name> <password> <database_name>
+
 """
 
 if __name__ == "__main__":
@@ -15,6 +20,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
+
     for state in session.query(State).order_by(State.id).all():
         print(f'{state.id}: {state.name}')
     session.close()
