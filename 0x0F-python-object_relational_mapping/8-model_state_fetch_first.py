@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
-Lists the first ``State`` objects from a database
+Lists the first ``State`` object from a database
 
 Usage:
-    $ ./7-model_state_fetch_all.py <user_name> <password> <database_name>
+    $ ./8-model_state_fetch_first.py <user_name> <password> <database_name>
 
 """
 

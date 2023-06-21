@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Lists all ``State`` objects from a database
+Adds ``State`` object 'Louisiana' to a database
 
 Usage:
     $ ./11-model_state_insert.py <user_name> <password> <database_name>

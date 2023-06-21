@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lists all cities from a database """
+"""Lists all cities from a database in ascending order of city id """
 
 if __name__ == '__main__':
     import MySQLdb

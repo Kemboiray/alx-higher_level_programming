@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Lists all ``State`` objects from a database
+Prints all ``City`` objects from a database
 
 Usage:
     $ ./14-model_city_fetch_by_state.py <user_name> <password> <database_name>

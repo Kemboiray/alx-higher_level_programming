@@ -2,6 +2,8 @@
 """
 Lists all states with a name matching a string argument in the database
 also given as a command-line argument
+
+Safe from MySQL injection
 """
 
 if __name__ == '__main__':

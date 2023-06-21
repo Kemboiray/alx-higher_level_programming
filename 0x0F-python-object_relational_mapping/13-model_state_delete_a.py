@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Lists the first ``State`` objects from a database
+Deletes all State objects with a name containing the letter 'a'
 
 Usage:
     $ ./13-model_state_delete_a.py <user_name> <password> <database_name>

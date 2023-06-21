@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Lists the first ``State`` objects from a database
+Lists the ``State`` object matching the name provided as a command-line
+argument
 
 Usage:
     $ ./10-model_state_my_get.py <user_name> <password> <database_name>

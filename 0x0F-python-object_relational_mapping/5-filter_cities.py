@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Lists all states with a name matching a string argument in the database
-also given as a command-line argument
+Lists all cities of a state given as a command-line argument
 """
 
 if __name__ == '__main__':

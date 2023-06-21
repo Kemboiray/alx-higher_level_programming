@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
-Lists the first ``State`` objects from a database
+Lists all ``State`` objects containing the letter ``a``
 
 Usage:
-    $ ./7-model_state_fetch_all.py <user_name> <password> <database_name>
+    $ ./9-model_state_filter_a.py <user_name> <password> <database_name>
 
 """
 

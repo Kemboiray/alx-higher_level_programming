@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Lists all ``State`` objects from a database
+Changes the name of a ``State`` object with id = 2
 
 Usage:
     $ ./12-model_state_update_id_2.py <user_name> <password> <database_name>
