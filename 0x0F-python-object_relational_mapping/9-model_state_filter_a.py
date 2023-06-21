@@ -21,7 +21,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for state in session.query(State).filter(State.name == '%a%').all():
+    for state in session.query(State).filter(State.name.like('%a%')).all():
         print(f'{state.id}: {state.name}')
 
     session.close()
