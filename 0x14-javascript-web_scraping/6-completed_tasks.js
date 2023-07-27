@@ -3,7 +3,7 @@ const request = require('request');
 const url = process.argv[2];
 
 request(url, (error, response, body) => {
-  if (!error && response.statusCode === 200) {
+  if (!error) {
     const users = JSON.parse(body);
     const completions = {};
     for (const user of users) {
