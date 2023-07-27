@@ -7,17 +7,13 @@ request(url, (error, response, body) => {
     const users = JSON.parse(body);
     const completions = {};
     for (const user of users) {
-      const userId = JSON.stringify(user.userId);
+      const userId = String(user.userId);
       if (userId in completions) {
         if (user.completed === true) {
           completions[userId] += 1;
         }
-      } else {
-        if (user.completed === true) {
-          completions[userId] = 1;
-        } else {
-          completions[userId] = 0;
-        }
+      } else if (user.completed === true) {
+        completions[userId] = 1;
       }
     }
     console.log(completions);
