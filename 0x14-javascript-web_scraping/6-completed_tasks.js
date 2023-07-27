@@ -5,8 +5,8 @@ const apiUrl = process.argv[2];
 
 request(apiUrl, (error, response, body) => {
   if (error) {
-	  console.error(error);
-	  return;
+    console.error(error);
+    return;
   }
   const todos = JSON.parse(body);
   const completedTasks = {};
