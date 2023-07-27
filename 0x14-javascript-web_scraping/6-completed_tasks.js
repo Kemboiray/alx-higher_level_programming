@@ -26,10 +26,10 @@ function print (obj) {
   if (Object.keys(obj).length === 0) {
     console.log('{}');
   } else {
-    console.log(`{ ${Object.keys(obj)[0]}: ${Object.values(obj)[0]},`);
+    console.log(`{ '${Object.keys(obj)[0]}': ${Object.values(obj)[0]},`);
     for (const key of Object.keys(obj).slice(1, -1)) {
-      console.log(`  ${key}: ${obj[key]},`);
+      console.log(`  '${key}': ${obj[key]},`);
     }
-    console.log(`  ${Object.keys(obj).slice(-1)}: ${Object.values(obj).slice(-1)} }`);
+    console.log(`  '${Object.keys(obj).slice(-1)}': ${Object.values(obj).slice(-1)} }`);
   }
 }
