@@ -22,5 +22,7 @@ request(url, (error, response, body) => {
       }
     }
     console.log(completions);
+  } else {
+    console.error(error);
   }
 });
