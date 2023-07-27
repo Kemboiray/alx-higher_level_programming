@@ -25,6 +25,8 @@ request(url, (error, response, body) => {
 function print (obj) {
   if (Object.keys(obj).length === 0) {
     console.log('{}');
+  } else if (Object.keys(obj).length === 2) {
+    console.log(obj);
   } else {
     console.log(`{ '${Object.keys(obj)[0]}': ${Object.values(obj)[0]},`);
     for (const key of Object.keys(obj).slice(1, -1)) {
