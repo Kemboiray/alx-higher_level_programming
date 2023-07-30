@@ -14,9 +14,8 @@ if __name__ == "__main__":
     res = requests.post(url, data)
     try:
         d = res.json()
-    except Exception as e:
-        print(e)
-        # print("Not a valid JSON")
+    except ValueError:
+        print("Not a valid JSON")
     else:
         if d:
             print(f"[{d['id']}] {d['name']}")
