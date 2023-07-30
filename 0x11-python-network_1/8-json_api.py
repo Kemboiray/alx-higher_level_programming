@@ -12,12 +12,12 @@ if __name__ == "__main__":
         param = ""
     data = {'q': param}
     res = requests.post(url, data)
-#   try:
-#       d = res.json()
-#   except json.decoder.JSONDecodeError:
-#       print("Not a valid JSON")
-#   else:
-#       if d:
-#           print(f"[{d['id']}] {d['name']}")
-#       else:
-#           print("No result")
+    try:
+        d = res.json()
+    except:
+        print("Not a valid JSON")
+    else:
+        if d:
+            print(f"[{d['id']}] {d['name']}")
+        else:
+            print("No result")
