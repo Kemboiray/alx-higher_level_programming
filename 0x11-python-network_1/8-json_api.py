@@ -15,7 +15,7 @@ if __name__ == "__main__":
     try:
         d = res.json()
     except Exception as e:
-        print e
+        print(e)
         # print("Not a valid JSON")
     else:
         if d:
