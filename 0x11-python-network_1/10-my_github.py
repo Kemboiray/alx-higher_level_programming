@@ -5,8 +5,8 @@ if __name__ == "__main__":
     import requests
     import sys
 
-    username, token = sys.argv[1], sys.argv[1:][0] or "token"
-    url = f"https://api.github.com/users/{username}"
-    data = {"Authorization": f"Bearer {token}"}
-    res = requests.get(url, data)
-    print(res.json()["id"])
+    username, token = sys.argv[1], sys.argv[2]
+    url = f"https://api.github.com/user"
+    auth = (username, token)
+    res = requests.get(url, auth=auth)
+    print(res.json().get("id"))
