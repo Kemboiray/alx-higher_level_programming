@@ -10,5 +10,6 @@ if __name__ == "__main__":
     res = requests.get(url)
     json = res.json()
     for i in range(0, 10):
-        print(f"{json[i].get('sha')}:\
+        if i < len(json):
+            print(f"{json[i].get('sha')}:\
  {json[i].get('commit').get('author').get('name')}")
